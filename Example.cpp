@@ -2,7 +2,4 @@
 
 #include <iostream>
 
-int main() {
-  int number = coolNumber();
-  std::cout << "The number is " << number << std::endl;
-}
+int main() { std::cout << string_format("Hello, {}!", "World") << std::endl; }
