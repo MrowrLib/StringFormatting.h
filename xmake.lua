@@ -1,6 +1,7 @@
 set_languages("c++23")
 add_rules("mode.debug")
 set_toolchains("msvc")
+add_requires("fmt")
 
 option("use_fmt")
     add_defines("STRING_FORMATTING_USE_FMT")
@@ -8,23 +9,15 @@ option("use_fmt")
     set_showmenu(true)
     set_default(false)
 
-package("StringFormatting")
-    set_homepage("https://github.com/MrowrLib/StringFormatting.h")
-    set_description("A header-only string formatting library")
+target("StringFormatting")
     set_kind("headeronly")
-    on_install(function(package)
-        os.cp("include", package:installdir("include"))
-    end)
-    on_fetch(function(package, opt)
-        if opt.system then
-            return
-        end
-
-        return {includedirs = {package:installdir("include")}}
-    end)
+    add_headerfiles("include/(**.h)", {prefixdir = "StringFormatting"}) -- ??? DO WE NEED THIS ???
+    add_includedirs("include", {public = true})
 
 target("Example")
     set_kind("binary")
     add_files("Example.cpp")
-    add_packages("StringFormatting")
+    add_deps("StringFormatting")
+    add_imports("StringFormatting")
+    add_packages("fmt")
     add_options("use_fmt")
