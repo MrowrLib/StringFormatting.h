@@ -1,4 +1,8 @@
-cadd_rules("mode.debug")
+if not add_rules then
+    return
+end
+
+add_rules("mode.debug")
 set_toolchains("msvc")
 set_languages("c++23")
 add_requires("fmt")
