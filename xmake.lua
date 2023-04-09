@@ -1,8 +1,7 @@
-if not add_rules then
-    return
-end
+local repo_root = path.absolute(".")
+local script_dir = path.absolute(path.directory(_SCRIPT))
 
-if not package then
+if repo_root == script_dir then
     return
 end
 
