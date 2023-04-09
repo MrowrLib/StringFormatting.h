@@ -1,5 +1,3 @@
-if add_rules then
-
 add_rules("mode.debug")
 set_toolchains("msvc")
 set_languages("c++23")
@@ -23,5 +21,3 @@ target("Example")
     add_imports("StringFormatting")
     add_packages("fmt")
     add_options("use_fmt")
-
-end
