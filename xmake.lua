@@ -1,4 +1,4 @@
-add_rules("mode.debug")
+cadd_rules("mode.debug")
 set_toolchains("msvc")
 set_languages("c++23")
 add_requires("fmt")
@@ -10,7 +10,8 @@ option("use_fmt")
     set_default(false)
 
 target("StringFormatting")
-    set_kind("headeronly")
+    set_kind("library") -- Change this to library
+    add_files("include/*.h")
     add_headerfiles("include/(**.h)", {prefixdir = "StringFormatting"})
     add_includedirs("include", {public = true})
 
