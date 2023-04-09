@@ -2,7 +2,7 @@ if not add_rules then
     return
 end
 
-if not add_repositories then
+if not package then
     return
 end
 
