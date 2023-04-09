@@ -1,6 +1,4 @@
-if not add_rules then
-    return
-end
+if add_rules then
 
 add_rules("mode.debug")
 set_toolchains("msvc")
@@ -25,3 +23,5 @@ target("Example")
     add_imports("StringFormatting")
     add_packages("fmt")
     add_options("use_fmt")
+
+end
