@@ -8,17 +8,17 @@ void Example() {
 }
 ```
 
+## What?
+
+Simply passes the arguments to `std::format()` or `fmt::format()`.
+
 ## Why?
 
 I got _really_ tired of switching between `fmt::format` and `std::format`.
 
-Does your C++ version support `std::format`? Great! Use it.
+> e.g. because only certain C++ versions and compilers support `std::format`.
 
-Does your C++ compiler not support `std::format`? No problem! Use `fmt::format`.
-
-## What?
-
-Simply passes the arguments to `std::format` or `fmt::format`.
+## How?
 
 By default, `std::format` is used.
 
