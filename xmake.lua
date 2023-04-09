@@ -1,6 +1,6 @@
-set_languages("c++23")
 add_rules("mode.debug")
 set_toolchains("msvc")
+set_languages("c++23")
 add_requires("fmt")
 
 option("use_fmt")
