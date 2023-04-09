@@ -11,7 +11,7 @@ option("use_fmt")
 
 target("StringFormatting")
     set_kind("headeronly")
-    add_headerfiles("include/(**.h)")
+    add_headerfiles("include/(**.h)", {prefixdir = "StringFormatting"})
     add_includedirs("include", {public = true})
 
 target("Example")
