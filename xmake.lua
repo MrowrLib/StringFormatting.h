@@ -1,3 +1,7 @@
+if not add_rules then
+    return
+end
+
 add_rules("mode.debug")
 set_toolchains("msvc")
 set_languages("c++23")
