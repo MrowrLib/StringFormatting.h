@@ -10,8 +10,7 @@ option("use_fmt")
     set_default(false)
 
 target("StringFormatting")
-    set_kind("library") -- Change this to library
-    add_files("include/*.h")
+    set_kind("library")
     add_headerfiles("include/(**.h)", {prefixdir = "StringFormatting"})
     add_includedirs("include", {public = true})
 
