@@ -6,3 +6,6 @@ package("StringFormatting")
     on_install(function (package)
         os.cp("include", package:installdir())
     end)
+    on_download(function (package) 
+        -- do nothing 
+    end)
