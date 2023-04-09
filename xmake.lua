@@ -1,10 +1,14 @@
+set_languages("c++23")
 add_rules("mode.debug")
-
 set_toolchains("msvc")
 
--- add_requires("vcpkg::fmt")
+add_requires("fmt")
 
-set_languages("c++23")
+option("use_fmt")
+    add_defines("STRING_FORMATTING_USE_FMT")
+    set_description("Enable fmt::format (instead of std::format)")
+    set_showmenu(true)
+    set_default(false)
 
 target("StringFormatting")
     set_kind("phony")
@@ -17,5 +21,5 @@ target("Example")
     set_targetdir("bin")
     add_deps("StringFormatting")
     add_imports("StringFormatting")
-
-    -- add_packages("vcpkg::fmt")
+    add_packages("fmt")
+    add_options("use_fmt")
