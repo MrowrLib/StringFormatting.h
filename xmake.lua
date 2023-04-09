@@ -1,7 +1,4 @@
-local repo_root = path.absolute(".")
-local script_dir = path.absolute(path.directory(_SCRIPT))
-
-if repo_root == script_dir then
+if is_plat("repository") then
     return
 end
 
