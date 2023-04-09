@@ -11,8 +11,8 @@ option("use_fmt")
     set_default(false)
 
 target("StringFormatting")
-    set_kind("phony")
-    add_headerfiles("include/(**.h)")
+    set_kind("headeronly")
+    add_headerfiles("include/(**.h)", {prefixdir = "StringFormatting"}) -- ??? DO WE NEED THIS ???
     add_includedirs("include", {public = true})
 
 target("Example")
@@ -22,3 +22,4 @@ target("Example")
     add_imports("StringFormatting")
     add_packages("fmt")
     add_options("use_fmt")
+    
