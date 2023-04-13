@@ -1,11 +1,23 @@
-# `#include <StringFormatting.h>`
+# `#include <string_format>`
 
 ```cpp
-#include <StringFormatting.h>
+#include <string_format>
 
 void Example() {
     auto text = string_format("Super {}", "Easy");
 }
+```
+
+## Installation
+
+```lua
+-- xmake
+add_repositories("MrowrLib https://github.com/MrowrLib/Packages.git")
+add_requires("string_format")
+```
+
+```cmake
+# CMake/vcpkg (coming soon)
 ```
 
 ## What?
@@ -20,9 +32,9 @@ I got _really_ tired of switching between `fmt::format` and `std::format`.
 
 ## How?
 
-By default, `std::format` is used.
+If `fmt` headers are detected, then `fmt::format` is used.
 
-If you want to use `fmt::format`, you can define `STRING_FORMATTING_USE_FMT` before including `StringFormatting.h`.
+Else `std::format` is used (_which will explode in C++ versions below C++20_).
 
 ## License
 
