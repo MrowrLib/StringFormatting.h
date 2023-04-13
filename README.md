@@ -38,6 +38,8 @@ Else `std::format` is used (_which will explode in C++ versions below C++20_).
 
 ## License
 
+Use however, no attribution required.
+
 ```
 BSD Zero Clause License (SPDX: 0BSD)
 
