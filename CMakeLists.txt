@@ -29,8 +29,16 @@ write_basic_package_version_file(
     COMPATIBILITY AnyNewerVersion
 )
 
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/string_formatConfig.cmake.in "@PACKAGE_INIT@\n\ninclude(\"${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@Targets.cmake\")")
+
+configure_file(
+    ${CMAKE_CURRENT_BINARY_DIR}/string_formatConfig.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+    @ONLY
+)
+
 install(FILES
-    "${PROJECT_NAME}Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
