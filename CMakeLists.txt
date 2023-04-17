@@ -45,3 +45,7 @@ install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
+
+add_executable(Example Example.cpp)
+target_link_libraries(Example PRIVATE ${PROJECT_NAME})
+target_compile_features(Example PRIVATE cxx_std_20)
