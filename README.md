@@ -51,7 +51,7 @@ target("Example")
 }
 ```
 
-> _You'll probably want to update the default-registry baseline to the latest commit from https://github.com/microsoft/vcpkg_
+> _Update the default-registry baseline to the latest commit from https://github.com/microsoft/vcpkg_
 
 #### `vcpkg.json`
 
