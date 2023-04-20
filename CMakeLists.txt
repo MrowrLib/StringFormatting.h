@@ -34,7 +34,8 @@ write_basic_package_version_file(
 # file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake.in "@PACKAGE_INIT@\n\ninclude(CMakeFindDependencyMacro)\ninclude(\"@CMAKE_CURRENT_LIST_DIR@/@PROJECT_NAME@Targets.cmake\")")
 
 # Debugging...
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake.in "@PACKAGE_INIT@\n\ninclude(CMakeFindDependencyMacro)\nmessage(\"CMAKE_CURRENT_LIST_DIR: @CMAKE_CURRENT_LIST_DIR@\")\nmessage(\"CMAKE_CURRENT_LIST_FILE: @CMAKE_CURRENT_LIST_FILE@\")\nmessage(\"CMAKE_INSTALL_PREFIX: @CMAKE_INSTALL_PREFIX@\")\ninclude(\"@CMAKE_CURRENT_LIST_DIR@/@PROJECT_NAME@Targets.cmake\")")
+# file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake.in "@PACKAGE_INIT@\n\ninclude(CMakeFindDependencyMacro)\nmessage(\"CMAKE_CURRENT_LIST_DIR: @CMAKE_CURRENT_LIST_DIR@\")\nmessage(\"CMAKE_CURRENT_LIST_FILE: @CMAKE_CURRENT_LIST_FILE@\")\nmessage(\"CMAKE_INSTALL_PREFIX: @CMAKE_INSTALL_PREFIX@\")\ninclude(\"@CMAKE_CURRENT_LIST_DIR@/@PROJECT_NAME@Targets.cmake\")")
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake.in "@PACKAGE_INIT@\n\ninclude(CMakeFindDependencyMacro)\nmessage(STATUS \"CMAKE_CURRENT_LIST_DIR: \${CMAKE_CURRENT_LIST_DIR}\")\nmessage(STATUS \"CMAKE_CURRENT_LIST_FILE: \${CMAKE_CURRENT_LIST_FILE}\")\nmessage(STATUS \"CMAKE_INSTALL_PREFIX: \${CMAKE_INSTALL_PREFIX}\")\ninclude(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake\")")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake.in"
