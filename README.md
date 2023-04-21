@@ -31,27 +31,22 @@ target("Example")
 
 ### vcpkg
 
-#### `vcpkg-configuration.json`
+#### `CMakeLists.txt`
 
-```json
-{
-    "default-registry": {
-        "kind": "git",
-        "repository": "https://github.com/microsoft/vcpkg.git",
-        "baseline": "501db0f17ef6df184fcdbfbe0f87cde2313b6ab1"
-    },
-    "registries": [
-        {
-            "kind": "git",
-            "repository": "https://github.com/MrowrLib/Packages.git",
-            "baseline": "70e5df9d32678690c9966c193dfdbb10e27f10f8",
-            "packages": ["mrowr-string-format"]
-        }
-    ]
-}
+```cmake
+add_executable(Example main.cpp)
+
+# Find string_format and link it to your target
+find_package(string_format CONFIG REQUIRED)
+target_link_libraries(Example PRIVATE MrowrLib::string_format)
+
+# If you're using C++20, you won't need fmt
+target_compile_features(Example PRIVATE cxx_std_20)
+
+# Else, add 'fmt' as a dependency
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(Example PRIVATE fmt::fmt)
 ```
-
-> _Update the default-registry baseline to the latest commit from https://github.com/microsoft/vcpkg_
 
 #### `vcpkg.json`
 
@@ -69,22 +64,28 @@ And if you want to use `fmt`:
 }
 ```
 
-#### `CMakeLists.txt`
+#### `vcpkg-configuration.json`
 
-```cmake
-find_path(MROWR_STRING_FORMAT_INCLUDE_DIRS "string_format")
-
-add_executable(Example main.cpp)
-
-target_include_directories(Example INTERFACE ${MROWR_STRING_FORMAT_INCLUDE_DIRS})
-
-# If you're using C++20, you won't need fmt
-target_compile_features(Example PRIVATE cxx_std_20)
-
-# Else, add 'fmt' as a dependency
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(Example PRIVATE fmt::fmt)
+```json
+{
+    "default-registry": {
+        "kind": "git",
+        "repository": "https://github.com/microsoft/vcpkg.git",
+        "baseline": "95252eadd63118201b0d0df0b4360fa613f0de84"
+    },
+    "registries": [
+        {
+            "kind": "git",
+            "repository": "https://github.com/MrowrLib/Packages.git",
+            "baseline": "a8cd0e28173ef03864efe86028f4d40c1b9885ef",
+            "packages": ["mrowr-string-format"]
+        }
+    ]
+}
 ```
+
+> _Update the default-registry baseline to the latest commit from https://github.com/microsoft/vcpkg_  
+> _Update the MrowrLib/Packages baseline to the latest commit from https://github.com/MrowrLib/Packages_
 
 ## What?
 
