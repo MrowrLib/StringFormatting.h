@@ -8,6 +8,10 @@ void Example() {
 }
 ```
 
+## What?
+
+Simply passes the arguments to `std::format()` or `fmt::format()`.
+
 ## Installation
 
 ### xmake
@@ -86,10 +90,6 @@ And if you want to use `fmt`:
 
 > _Update the default-registry baseline to the latest commit from https://github.com/microsoft/vcpkg_  
 > _Update the MrowrLib/Packages baseline to the latest commit from https://github.com/MrowrLib/Packages_
-
-## What?
-
-Simply passes the arguments to `std::format()` or `fmt::format()`.
 
 ## Why?
 
