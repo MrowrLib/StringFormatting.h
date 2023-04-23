@@ -42,7 +42,7 @@ add_executable(Example main.cpp)
 
 # Find string_format and link it to your target
 find_package(string_format CONFIG REQUIRED)
-target_link_libraries(Example PRIVATE MrowrLib::string_format)
+target_link_libraries(Example PRIVATE string_format::string_format)
 
 # If you're using C++20, you won't need fmt
 target_compile_features(Example PRIVATE cxx_std_20)
