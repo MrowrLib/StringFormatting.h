@@ -1,7 +1,7 @@
-# `#include <string_format>`
+# `#include <string_format.h>`
 
 ```cpp
-#include <string_format>
+#include <string_format.h>
 
 void Example() {
     auto text = string_format("Super {}", "Easy");
