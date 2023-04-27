@@ -81,7 +81,7 @@ And if you want to use `fmt`:
         {
             "kind": "git",
             "repository": "https://github.com/MrowrLib/Packages.git",
-            "baseline": "71dff912d66d92c5562ed4f403f95f0d081c7dc6",
+            "baseline": "eb6626b4398a5813eef7195e3a05ea203125a78a",
             "packages": ["mrowr-string-format"]
         }
     ]
