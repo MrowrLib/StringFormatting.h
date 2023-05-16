@@ -81,7 +81,7 @@ And if you want to use `fmt`:
         {
             "kind": "git",
             "repository": "https://github.com/MrowrLib/Packages.git",
-            "baseline": "eb6626b4398a5813eef7195e3a05ea203125a78a",
+            "baseline": "a10d9e3ed79e875558cfb1aa3cd012a71a102815",
             "packages": ["mrowr-string-format"]
         }
     ]
@@ -102,6 +102,10 @@ I got _really_ tired of switching between `fmt::format` and `std::format`.
 If `fmt` headers are detected, then `fmt::format` is used.
 
 Else `std::format` is used (_which will explode in C++ versions below C++20_).
+
+If you want to force use of `fmt`, then define `STRING_FORMAT_USE_FMT` before including the header.
+
+If you want to force use of `std::format`, then define `STRING_FORMAT_USE_STD` before including the header.
 
 ## License
 
