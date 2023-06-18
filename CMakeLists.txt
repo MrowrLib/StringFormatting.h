@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.21)
 project(string_format VERSION 0.1.0 LANGUAGES CXX)
 set(namespace string_format)
 
+option(BUILD_EXAMPLE "Build the example target" OFF)
+
 add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -51,6 +53,8 @@ install(FILES
     DESTINATION share/${PROJECT_NAME}
 )
 
-add_executable(Example Example.cpp)
-target_link_libraries(Example PRIVATE ${PROJECT_NAME})
-target_compile_features(Example PRIVATE cxx_std_20)
+if(BUILD_EXAMPLE)
+    add_executable(Example Example.cpp)
+    target_link_libraries(Example PRIVATE ${PROJECT_NAME})
+    target_compile_features(Example PRIVATE cxx_std_20)
+endif()
